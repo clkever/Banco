@@ -1,2 +1,2 @@
-### Projeto desenvolvido no Workbench, com a colaboração do Professor José de Assis.
-
+Criação de banco de dados com Software MySQL Workbench.
+TI - Senac São Paulo.
