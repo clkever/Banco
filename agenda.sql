@@ -4,13 +4,10 @@ Agenda de contatos
 */
 -- Pesquisar banco de dados disponíveis
 show databases;
-
 -- Criando um banco de dados
 create database dbagenda;
-
 -- Remover um banco de dados
 drop database dbagenda;
-
 -- Selecionar o banco de dados
 use dbagenda;
 
@@ -24,36 +21,23 @@ create table contatos(
 
 -- Verificar tabelas disponíveis no banco
 show tables;
-
 -- Comando usado para descrever a tabela
 describe contatos;
-
-
 -- Lista todos os contatos cadastrados (próxima aula)
 select * from contatos;
-
 -- Comando usado para alterar o nome de um campo(cabeçalho) da tabela
 alter table contatos change nome contato varchar(50) not null;
-
 -- Comando usado para adicionar um novo campo a tabela
 alter table contatos add column obs varchar(250);
-
 -- Comando usado para adicionar um novo campo em um lugar específico
 alter table contatos add column fone2 varchar(15) after fone;
-
 -- Comando usado para modificar o tipo de dado e/ou validações do campo
 alter table contatos modify column fone2 varchar(15) not null after fone;
 alter table contatos modify email varchar (100);
 alter table contatos modify email varchar (100) unique;
-
 -- Comando usado para apagar um campo da tabela
 alter table contatos drop column obs;
 alter table contatos drop column fone2;
-
-
-
-
-
 -- Comando usado para remover uma tabela
 drop table contatos;
 
@@ -71,6 +55,7 @@ DELETE (exclusão de um registro da tabela)
 */
 
 /* CRUD CREATE ( Insert) */
+
 insert into contatos (nome,fone,email) 
 values ('Bill Gates' , '99999-1111' , 'bill@email.com');
 
@@ -116,28 +101,53 @@ values ('Raquel','99999-100000');
 select * from contatos where id=1;
 select * from contatos order by nome asc;
 
-
 /* CRUD READ (Select) */
 -- Selecionar todos os registros da tabela
 select * from contatos;
-
-
 -- Selecionar todos os registros em ordem alfabética (ascendente descendente)
 select * from contatos order by nome asc;
-
 -- Ordem alfabética ao descentente
 select * from contatos order by nome desc;
-
 -- Selecionar um registro (contato) específico
 select * from contatos where nome= 'Ana Maria';
 select * from contatos where id=1;
-
 -- Selecionar campos específicos da tabela
 select nome from contatos;
 select nome,fone from contatos order by nome asc;
-
 -- Filtrar nomes que começam com a letra B
 select * from contatos where nome like 'B%';
+
+/* CRUD UPDATE (ALTERA) */
+
+-- Alterando um dado espeífico do registro da tabela (usar sempre o id)
+update contatos set fone='912348090' where id=4;
+update contatos set email='bia@email.com' where id=2;
+-- Alterando todos os dados do registro
+
+update contatos set nome='Beatriz' , fone='35685-2655' , email='beatriz@hotmail.com' where id=2;
+
+/* CRUD DELETE (APAGA) */
+-- excluindo um registro da tabela ( usa-se sempre o id "segurança")
+
+delete from contatos where id=9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 
 

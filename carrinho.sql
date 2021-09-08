@@ -9,19 +9,15 @@ produto varchar (40) not null,
 quantidade int not null,
 valor varchar (40) not null
 );
+
 -- Selecionar o banco de dados
 use dbcarrinho;
-
-
 -- Pesquisar banco de dados disponíveis
 show databases;
-
 -- Comando usado para descrever a tabela
 describe carrinho;
-
 -- Verificar tabelas disponíveis no banco
 show tables;
-
 
 alter table carrinho modify produto varchar(100) not null;
 
@@ -71,14 +67,14 @@ values ('Água',1.50,10);
 select * from contatos order by nome asc;
 select sum(valor*quantidade) as total from carrinho;
 
-
-
 select * from carrinho;
-
 
 -- Operações matemáticas 
 select sum(valor*quantidade) as total from carrinho;
 
+update carrinho set quantidade='50' where id=6;
+update carrinho set quantidade='25' where id=3;
+delete from carrinho where id=1
 
 
 
