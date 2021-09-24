@@ -34,7 +34,7 @@ create table clientes(
     complemento varchar(120),
     cidade varchar(50) not null,
     bairro varchar(50) not null,
-    estado varchar(70) unique
+    estado varchar(70) not null
 );
 describe clientes;
 
